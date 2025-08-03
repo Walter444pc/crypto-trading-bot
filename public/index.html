@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crypto Trading Bot</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <div id="status-bar" class="status-bar p-2">Modo: simulation | Selección: manual | Exchange: binance | Estrategia: meanReversion | Estado: Parado</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <div class="card mb-3">
+          <div class="card-header">Logs <button class="btn btn-sm btn-success float-end" id="clear-logs">Limpiar</button></div>
+          <div class="card-body">
+            <div id="log-panel" class="log-panel"></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="card mb-3">
+          <div class="card-header" id="candle-chart-title">Gráfico de Precios</div>
+          <div class="card-body">
+            <canvas id="candle-chart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <div class="card mb-3">
+          <div class="card-header">Indicadores</div>
+          <div class="card-body">
+            <table class="table table-dark table-striped" id="metrics-table">
+              <thead>
+                <tr><th>Indicador</th><th>Valor</th></tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="card mb-3">
+          <div class="card-header">Pares Seleccionados</div>
+          <div class="card-body">
+            <table class="table table-dark table-striped" id="pairs-table">
+              <thead>
+                <tr><th>Par</th><th>Puntaje</th></tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <div class="card mb-3">
+          <div class="card-header">Distribución del Portfolio</div>
+          <div class="card-body">
+            <canvas id="pie-chart"></canvas>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="card mb-3">
+          <div class="card-header">Liquidez por Par</div>
+          <div class="card-body">
+            <canvas id="liquidity-chart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="input-group mb-3">
+          <span class="input-group-text">Comando:</span>
+          <input type="text" class="form-control command-input" id="command-input" placeholder="Ej: start, stop, set symbol BTC/USDT, clear logs">
+          <button class="btn btn-success" id="send-command">Enviar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/socket.io@4.7.5/client-dist/socket.io.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

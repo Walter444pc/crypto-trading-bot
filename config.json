@@ -1,0 +1,18 @@
+{
+  "exchange": "binance",
+  "mode": "simulation",
+  "selectionMode": "manual",
+  "baseCurrency": "USDT",
+  "fictionalBalance": { "USDT": 10000 },
+  "timeframe": "5m",
+  "symbol": "BTC/USDT",
+  "strategy": "meanReversion",
+  "sma": { "period": 50 },
+  "ema": { "period": 50 },
+  "meanReversion": { "period": 7, "offset": 0.7 },
+  "pairsTrading": { "symbol1": "BTC/USDT", "symbol2": "ETH/USDT", "period": 50, "offset": 3 },
+  "risk": { "maxPositionSize": 0.02, "stopLossPercent": 0.01, "takeProfitPercent": 0.03, "defaultTradingFee": 0.001 },
+  "indicators": { "rsiPeriod": 14, "macdFast": 12, "macdSlow": 26, "macdSignal": 9, "bollingerPeriod": 20, "bollingerStdDev": 2 },
+  "autoSelection": { "maxPairs": 3, "evaluationInterval": 86400000 },
+  "feesCacheDuration": 172800000
+}
